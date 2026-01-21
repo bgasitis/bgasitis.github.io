@@ -12,8 +12,8 @@ Completed:
 - [x] 7. Add base href for proper asset paths
 
 ## Deployment URL
-**https://mnohr.github.io/bhagavad-gita-pwa/**
+**https://bgasitis.github.io/**
 
 ## Repository
-https://github.com/mnohr/bhagavad-gita-pwa
+https://github.com/bgasitis/bhagavad-gita-pwa
 
