@@ -1,19 +1,32 @@
 # GitHub Pages Deployment TODO
 
-## Status: ✅ COMPLETED
+## Status: ⚠️ RESET NEEDED
 
-Completed:
-- [x] 1. Install gh-pages dependency
-- [x] 2. Add homepage field to package.json
-- [x] 3. Configure git remote origin
-- [x] 4. Push code to GitHub
-- [x] 5. Deploy to GitHub Pages (gh-pages branch created)
-- [x] 6. Add SPA fallback (404.html) for client-side routing
-- [x] 7. Add base href for proper asset paths
+The deployment configuration has been cleared for new repository initialization.
 
-## Deployment URL
-**https://mnohr.github.io/bhagavad-gita-pwa/**
+## New Repository Setup
 
-## Repository
-https://github.com/mnohr/bhagavad-gita-pwa
+To initialize a new repository:
+
+```bash
+# Initialize git repository
+git init
+
+# Stage all files
+git add .
+
+# Create initial commit
+git commit -m "Initial commit"
+
+# Add remote origin (replace with your repo URL)
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+
+# Push to remote
+git push -u origin main
+```
+
+To deploy to a new platform:
+1. Choose your hosting provider (Vercel, Netlify, etc.)
+2. Follow their deployment instructions
+3. Update `package.json` `homepage` field if needed
 
