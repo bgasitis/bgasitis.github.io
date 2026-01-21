@@ -31,49 +31,7 @@ After pushing to GitHub:
 2. Navigate to **Settings** → **Pages**
 3. Under "Build and deployment":
    - Source: Select **GitHub Actions**
-4. Create workflow file `.github/workflows/deploy.yml`:
-
-```yaml
-name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
-jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      - name: Install dependencies
-        run: npm ci
-      - name: Build
-        run: npm run build
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-```
-
-5. Commit and push the workflow file
-6. GitHub Actions will automatically deploy to Pages
+4. Create workflow file `.github/workflows/deploy.yml` with the deployment steps
+5. GitHub Actions will automatically deploy to:
+   `https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/`
 
