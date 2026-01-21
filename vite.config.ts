@@ -22,7 +22,7 @@ const copy404 = () => {
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
-      base: '/',
+      base: '/bhagavad-gita-pwa/',
       server: {
         port: 3000,
         host: '0.0.0.0',
@@ -42,19 +42,19 @@ export default defineConfig(({ mode }) => {
             display: 'standalone',
             scope: '/',
             start_url: '/',
-icons: [
+            icons: [
               {
-                src: '/assets/icons/icon_192.png',
+                src: '/bhagavad-gita-pwa/assets/icons/icon_192.png',
                 sizes: '192x192',
                 type: 'image/png',
               },
               {
-                src: '/assets/icons/icon_512.png',
+                src: '/bhagavad-gita-pwa/assets/icons/icon_512.png',
                 sizes: '512x512',
                 type: 'image/png',
               },
               {
-                src: '/assets/icons/icon_512.png',
+                src: '/bhagavad-gita-pwa/assets/icons/icon_512.png',
                 sizes: '512x512',
                 type: 'image/png',
                 purpose: 'any maskable',
