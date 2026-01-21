@@ -2,6 +2,22 @@ import path from 'path';
 import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
+import fs from 'fs';
+
+// Plugin to copy 404.html for GitHub Pages SPA fallback
+const copy404 = () => {
+  return {
+    name: 'copy-404',
+    closeBundle: () => {
+      const src = path.resolve(__dirname, 'public/404.html');
+      const dest = path.resolve(__dirname, 'dist/404.html');
+      if (fs.existsSync(src)) {
+        fs.copyFileSync(src, dest);
+        console.log('✓ Copied 404.html for SPA fallback');
+      }
+    }
+  };
+};
 
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
@@ -13,6 +29,7 @@ export default defineConfig(({ mode }) => {
       },
       plugins: [
         react(),
+        copy404(),
         VitePWA({
           registerType: 'autoUpdate',
           includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
