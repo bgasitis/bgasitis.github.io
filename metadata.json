@@ -1,0 +1,5 @@
+{
+  "name": "Bhagavad Gita As It Is - Nepali/English",
+  "description": "A comprehensive mobile-responsive app for reading Bhagavad Gita As It Is, featuring role-based CRUD operations, multilingual support (Nepali/English), and index-based navigation.",
+  "requestFramePermissions": []
+}

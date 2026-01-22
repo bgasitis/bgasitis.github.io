@@ -1,54 +1,45 @@
-# Integration TODO List
+# GitHub Pages Deployment Plan
 
-## Step 1: Create React App Directory Structure
-- [x] Create `src/react-app/` directory
-- [x] Create `src/react-app/components/` directory
-- [x] Create `src/react-app/services/` directory
-- [x] Create `src/react-app/types.ts` (copy from original)
-- [x] Create `src/react-app/constants.ts` (copy from original)
-- [x] Create `src/react-app/index.tsx` (entry point)
+## Current Project Status
+- ✅ Project Type: Vite + React PWA
+- ✅ Repository: bgasitis/bgasitis.github.io
+- ✅ Branch: main
+- ✅ URL: https://bgasitis.github.io
 
-## Step 2: Copy React App Files
-- [x] Copy components (VerseView, IndexPicker, AdminPanel, ChatBot)
-- [x] Copy services (geminiService)
-- [x] Copy App.tsx
-- [x] Copy manifest.json
-- [x] Copy sw.js
+## Required Changes
 
-## Step 3: Install React Dependencies
-- [x] Add @vitejs/plugin-react to devDependencies
-- [x] Add react, react-dom to dependencies
-- [x] Add @google/genai to dependencies
+### Step 1: Update package.json
+- [ ] Add `homepage` field for correct asset paths
+- [ ] Add ` predeploy` and `deploy` scripts for easy deployment
 
-## Step 4: Update Vite Config
-- [x] Add @vitejs/plugin-react plugin
-- [x] Configure for hybrid Lit + React
-- [x] Set base path for GitHub Pages
-- [x] Configure service worker
+### Step 2: Update vite.config.ts
+- [ ] Set `base: './'` for relative paths (important for subdirectory deployment)
 
-## Step 5: Update index.html
-- [x] Add React root div
-- [x] Add Tailwind CSS CDN
-- [x] Add fonts (Crimson Pro, Inter)
-- [x] Add importmap for React
-- [x] Keep existing PWA tags
+### Step 3: Test Build Locally
+- [ ] Run `npm run build` to verify the build works
+- [ ] Test the build with `npm run preview`
 
-## Step 6: Update manifest.json
-- [x] Update app name to "Bhagavad Gita As It Is (Nepali)"
-- [x] Update theme colors
-- [x] Update icons
-- [x] Keep PWA features
+### Step 4: Deploy to GitHub Pages
+- [ ] Install `gh-pages` dependency (or use another method)
+- [ ] Run `npm run deploy` to push build to GitHub
+- [ ] Verify deployment on GitHub repository settings
 
-## Step 7: Update package.json
-- [x] Add build script for React app
-- [x] Configure TypeScript
+## Important Notes
+- Since this is a `*.github.io` repo, GitHub Pages serves from root
+- The PWA service worker (`sw.js`) needs proper path configuration
+- All assets should use relative paths for correct loading
 
-## Step 8: Build & Deploy
-- [x] Build successful
-- [ ] Deploy to GitHub Pages
+## Commands to Deploy
+```bash
+npm install
+npm run build
+npm run deploy
+```
 
----
-
-## Progress Log
-- [x] All steps completed except deployment
+## After Deployment
+1. Go to Repository Settings → Pages
+2. Ensure "Deploy from a branch" is selected
+3. Source should be "main branch" and folder "/ (root)"
+4. Wait 1-2 minutes for deployment to go live
+5. Visit https://bgasitis.github.io to verify
 
